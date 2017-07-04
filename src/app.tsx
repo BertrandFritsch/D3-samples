@@ -12,6 +12,6 @@ interface Props {
 // The UI structure
 export default (props: Props) => (
   <Provider store={ props.store }>
-    <chapter2.components.Chapter2View />
+    <chapter2.components.Chapter2SVGView />
   </Provider>
 );

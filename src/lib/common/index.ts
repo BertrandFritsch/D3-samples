@@ -1,0 +1,44 @@
+import * as d3 from 'd3';
+
+interface ChartProps {
+  width: number;
+  height: number;
+  margin: {
+    left: number;
+    right: number;
+    top: number;
+    bottom: number
+  },
+
+  [propName: string]: any;
+}
+
+const protoChart = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+  margin: {
+    left: 10,
+    right: 10,
+    top: 10,
+    bottom: 10,
+  },
+};
+
+export function chartFactory(parentNode: HTMLElement, opts: { [propName: string]: any } = {}, proto: ChartProps = protoChart) {
+  const chart = {
+    ...proto,
+    ...opts
+  };
+
+  chart.svg = d3.select(parentNode)
+                .append('svg')
+                .attr('id', chart.id || 'chart')
+                .attr('width', chart.width - chart.margin.right)
+                .attr('height', chart.height - chart.margin.bottom);
+
+  chart.container = chart.svg.append('g')
+                         .attr('id', 'container')
+                         .attr('transform', `translate(${chart.margin.left}, ${chart.margin.top})`);
+
+  return chart;
+}
