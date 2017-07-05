@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 
-import chapter2 from './contexts/chapter2';
+import chapter3 from './contexts/chapter3';
 
 import { Store } from './createStore';
 
@@ -12,6 +12,6 @@ interface Props {
 // The UI structure
 export default (props: Props) => (
   <Provider store={ props.store }>
-    <chapter2.components.Chapter2SVGView />
+    <chapter3.components.Chapter3SVGView />
   </Provider>
 );
