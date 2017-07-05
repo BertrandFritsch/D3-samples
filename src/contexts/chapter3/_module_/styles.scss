@@ -1,0 +1,13 @@
+.axis path, .axis line {
+    fill: none;
+    stroke: #4f4f4f;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 11px;
+}
+
+.bar {
+    fill: steelblue;
+}
