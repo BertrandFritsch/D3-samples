@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, compose, createStore, Store as ReduxStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import { Chapter2State } from './contexts/chapter2';
-import reducers from './contexts/chapter2/_module_/reducers';
-import sagas from './contexts/chapter2/_module_/sagas';
+import { Chapter4State } from './contexts/chapter4';
+import reducers from './contexts/chapter4/_module_/reducers';
+import sagas from './contexts/chapter4/_module_/sagas';
 
 const nodeProcess = typeof process !== 'undefined' && process;
 const isTestEnv = nodeProcess && nodeProcess.env.NODE_ENV === 'test';
@@ -27,7 +27,7 @@ const finalCreateStore = !isTestEnv ? composeEnhancers(
 /**
  * Create the redux store
  */
-export type Store = ReduxStore<Chapter2State>;
+export type Store = ReduxStore<Chapter4State>;
 const store: Store = finalCreateStore(combineReducers(reducers));
 
 /**
