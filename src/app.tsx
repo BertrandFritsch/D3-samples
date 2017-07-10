@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 
-import chapter4 from './contexts/chapter4';
+import googleMaps from './contexts/googleMaps';
 
 import { Store } from './createStore';
 
@@ -12,6 +12,6 @@ interface Props {
 // The UI structure
 export default (props: Props) => (
   <Provider store={ props.store }>
-    <chapter4.components.Chapter4View />
+    <googleMaps.components.GoogleMapsSVGView />
   </Provider>
 );
